@@ -15,7 +15,7 @@
       "preview": "vite preview",
       "prepare": "husky .husky",
       "predeploy": "npm run build",
-      "deploy": "gh-pages -d dist"
+      "deploy": "gh-pages -d dist -b main"
    },
    "dependencies": {
       "react": "^18.3.1",

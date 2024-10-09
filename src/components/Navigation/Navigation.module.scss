@@ -1,0 +1,169 @@
+$burgerWidth: 30px;
+$burgerHeight: 24px;
+$burgerLineHeight: 4px;
+$burgerLineRadius: 4px;
+$maxBurgerMenuWidth: 255px;
+$menuBorderRadius: 5px;
+$menuPaddingTop: f.rem(80px);
+
+.burger {
+   display: none;
+}
+
+.menu {
+   overflow: hidden;
+   color: v.$menuText;
+   padding: f.rem(5px) f.rem(10px);
+
+   &-list {
+      display: flex;
+      row-gap: f.rem(25px);
+      column-gap: f.rem(35px);
+   }
+
+   &-item {
+      @extend %taphighlight;
+      @include m.adaptiveValue('font-size', 20px, 16px);
+      font-weight: 500;
+      color: v.$menuText;
+      cursor: pointer;
+
+      a {
+         color: inherit;
+         transition:
+            color 0.4s ease 0s,
+            text-shadow 0.4s ease 0s;
+
+         @include m.focused {
+            @include m.lboldtextb(v.$grayLight);
+         }
+
+         &.active {
+            @include m.lboldtextb(v.$grayLight);
+         }
+      }
+
+      @include m.hover {
+         @include m.lboldtextb(v.$grayLight);
+      }
+   }
+}
+
+@include m.smalltablet {
+   .burger {
+      position: relative;
+      z-index: 1002;
+      right: 10px;
+      display: inline-block;
+      width: $burgerWidth;
+      height: $burgerHeight;
+
+      @include m.focused {
+         span,
+         &::before,
+         &::after {
+            background-color: v.$grayLight;
+         }
+      }
+
+      &::before,
+      &::after {
+         content: '';
+         position: absolute;
+         left: 0;
+         width: 100%;
+         height: $burgerLineHeight;
+         background-color: v.$burgerColor;
+         border-radius: $burgerLineRadius;
+         transition: all 0.3s ease 0s;
+      }
+
+      &::before {
+         top: 0;
+      }
+
+      &::after {
+         bottom: 0;
+      }
+
+      span {
+         position: absolute;
+         top: 50%;
+         left: 0;
+         transform: translateY(-50%);
+         width: 100%;
+         height: $burgerLineHeight;
+         background-color: v.$burgerColor;
+         border-radius: $burgerLineRadius;
+         transition: all 0.3s ease 0s;
+      }
+
+      &.active {
+         &::before {
+            top: 50%;
+            transform: translateY(-50%) rotate(45deg);
+         }
+
+         &::after {
+            top: 50%;
+            transform: translateY(-50%) rotate(-45deg);
+         }
+
+         span {
+            transform: scale(0);
+         }
+      }
+   }
+
+   .menu {
+      position: fixed;
+      z-index: 1001;
+      top: 0;
+      right: -100%;
+      overflow: auto;
+      width: 100%;
+      height: 100%;
+      max-width: $maxBurgerMenuWidth;
+      padding: $menuPaddingTop f.rem(60px) f.rem(10px) f.rem(25px);
+      background-position: 10px;
+      visibility: hidden;
+      background-color: v.$burgerMenuBg;
+      border: 1px solid v.$burgerMenuBorder;
+      border-top-left-radius: $menuBorderRadius;
+      border-bottom-left-radius: $menuBorderRadius;
+      border-right: none;
+      transition:
+         right 0.3s ease 0s,
+         visibility 0.3s ease 0s;
+
+      @include m.smallmobile {
+         max-width: 100%;
+         border: none;
+         border-radius: 0;
+      }
+
+      &-list {
+         flex-direction: column;
+         height: 100%;
+      }
+
+      &-item {
+         @include m.adaptiveValue('font-size', 32px, 24px);
+         width: fit-content;
+
+         @include m.smallmobile {
+            align-self: center;
+            text-align: center;
+         }
+      }
+
+      &.active {
+         right: 0;
+         visibility: visible;
+      }
+   }
+}
+
+.hidden {
+   display: none;
+}

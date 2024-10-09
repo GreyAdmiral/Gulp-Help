@@ -1,0 +1,17 @@
+.possibilities {
+   @extend %listSection;
+   @extend %text;
+
+   &-list {
+      @extend %list;
+
+      &-item {
+         @extend %listItem;
+
+         &::before {
+            content: '✓';
+            font-style: italic;
+         }
+      }
+   }
+}

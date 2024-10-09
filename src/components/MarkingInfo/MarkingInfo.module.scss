@@ -1,0 +1,49 @@
+.marking {
+   &-info {
+      @extend %text;
+      @include m.flex(null, null, column);
+      row-gap: f.rem(15px);
+      padding-bottom: f.rem(10px);
+
+      &-item {
+         display: flex;
+         row-gap: f.rem(10px);
+         column-gap: f.rem(10px);
+         @include m.item-direction-adaptive;
+
+         &:nth-child(odd) {
+            flex-direction: row-reverse;
+            @include m.item-direction-adaptive;
+         }
+
+         &-image {
+            @include m.responsiveImage;
+
+            img {
+               object-position: center;
+               object-fit: contain;
+            }
+         }
+      }
+
+      &-template {
+         .marking-info-item-image {
+            padding: 0 0 23.25% 48%;
+
+            @media all and (max-width: 1140.5px) {
+               padding: 0 0 48.5% 100%;
+            }
+         }
+      }
+
+      &-struct {
+         .marking-info-item-image {
+            padding: 0 0 31% 20%;
+
+            @media all and (max-width: 1140.5px) {
+               display: none;
+            }
+         }
+      }
+   }
+}

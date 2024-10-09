@@ -1,0 +1,40 @@
+.stylization {
+   &-info {
+      @extend %text;
+      @include m.flex(null, null, column);
+      row-gap: f.rem(15px);
+      padding-bottom: f.rem(10px);
+
+      &-item {
+         display: flex;
+         flex-direction: row-reverse;
+         row-gap: f.rem(10px);
+         column-gap: f.rem(10px);
+         @include m.item-direction-adaptive;
+
+         &:nth-child(odd) {
+            flex-direction: row;
+            @include m.item-direction-adaptive;
+         }
+
+         &-image {
+            @include m.responsiveImage;
+
+            img {
+               object-position: center;
+               object-fit: contain;
+            }
+         }
+      }
+
+      &-struct {
+         .stylization-info-item-image {
+            padding: 0 0 40% 22.5%;
+
+            @media all and (max-width: 1140.5px) {
+               display: none;
+            }
+         }
+      }
+   }
+}

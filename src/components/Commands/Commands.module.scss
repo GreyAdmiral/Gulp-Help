@@ -1,0 +1,20 @@
+.commands {
+   @extend %listSection;
+   @extend %text;
+
+   &-list {
+      @extend %list;
+
+      &-item {
+         @extend %listItem;
+
+         &::before {
+            content: '❃';
+         }
+      }
+   }
+
+   code {
+      font-style: normal;
+   }
+}

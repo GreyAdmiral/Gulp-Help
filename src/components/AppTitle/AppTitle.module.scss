@@ -1,0 +1,10 @@
+.app {
+   &-title {
+      text-align: center;
+      padding: 0 0 f.rem(10px);
+
+      @include m.oversmallmobile {
+         padding: f.rem(10px);
+      }
+   }
+}

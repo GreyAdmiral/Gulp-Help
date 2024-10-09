@@ -1,0 +1,17 @@
+.main {
+   width: 100%;
+   @include m.adaptiveValue('font-size', 18px, 14px);
+
+   @include m.smalltablet {
+      background-color: v.$white;
+   }
+
+   &-body {
+      width: 100%;
+      height: 100%;
+      background-color: v.$white;
+      @extend %containerBodyPadding;
+      padding-top: 15px;
+      padding-bottom: 15px;
+   }
+}

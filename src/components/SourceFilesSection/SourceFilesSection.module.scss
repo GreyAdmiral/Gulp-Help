@@ -1,0 +1,14 @@
+.source {
+   &-files {
+      &-section {
+         @extend %text;
+         @include m.flex(null, null, column);
+         row-gap: f.rem(15px);
+         padding-bottom: f.rem(10px);
+
+         & code {
+            word-break: break-all;
+         }
+      }
+   }
+}

@@ -1,0 +1,22 @@
+.home {
+   &-postfix {
+      @include m.flex(null, null, column);
+      row-gap: 10px;
+      padding: f.rem(10px) 0;
+      @extend %text;
+
+      @include m.oversmallmobile {
+         padding: f.rem(10px);
+      }
+   }
+
+   &-link {
+      @extend %colorLink;
+   }
+
+   :last-child {
+      @include m.oversmallmobile {
+         padding: f.rem(10px);
+      }
+   }
+}

@@ -1,0 +1,13 @@
+.footer {
+   height: fit-content;
+
+   &-body {
+      text-align: center;
+      @extend %containerBodyPadding;
+      padding-top: f.rem(20px);
+      padding-bottom: f.rem(20px);
+      color: v.$grey;
+      font-family: Montserrat, Arial, Helvetica, sans-serif;
+      @include m.adaptiveValue('font-size', 20px, 12px);
+   }
+}

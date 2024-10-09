@@ -1,0 +1,92 @@
+.marking {
+   &-bonus {
+      @extend %text;
+      @include m.flex(null, null, column);
+      row-gap: f.rem(15px);
+      padding-bottom: f.rem(10px);
+
+      &-body {
+         @include m.flex(null, null, column);
+         row-gap: f.rem(10px);
+      }
+
+      &-info {
+         display: block;
+
+         @media all and (max-width: 1140.5px) {
+            text-align: justify;
+         }
+
+         &:nth-last-child(1) {
+            @include m.oversmallmobile {
+               padding: f.rem(5px) 0 f.rem(10px);
+            }
+         }
+      }
+
+      &-item {
+         display: flex;
+         row-gap: f.rem(10px);
+         column-gap: f.rem(10px);
+         @include m.item-direction-adaptive;
+
+         &:nth-child(odd) {
+            flex-direction: row-reverse;
+            @include m.item-direction-adaptive;
+         }
+
+         &-image {
+            @include m.responsiveImage;
+
+            img {
+               object-position: center;
+               object-fit: contain;
+            }
+         }
+
+         &-menu {
+            .marking-bonus-item-image {
+               padding: 0 0 18.25% 48%;
+
+               @media all and (max-width: 1140.5px) {
+                  padding: 0 0 38% 100%;
+               }
+            }
+
+            &:last-child {
+               .marking-bonus-item-image {
+                  padding: 0 0 22% 48%;
+
+                  @media all and (max-width: 1140.5px) {
+                     padding: 0 0 46% 100%;
+                  }
+               }
+            }
+         }
+
+         &-checkbox {
+            .marking-bonus-item-image {
+               padding: 0 0 32.5% 48%;
+
+               @media all and (max-width: 1140.5px) {
+                  padding: 0 0 67.5% 100%;
+               }
+            }
+         }
+
+         & code {
+            word-break: break-all;
+         }
+      }
+
+      h3 {
+         @include m.smallmobile {
+            text-align: center;
+         }
+      }
+   }
+
+   &-link {
+      @extend %colorLink;
+   }
+}

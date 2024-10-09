@@ -1,0 +1,36 @@
+@use 'sass:meta';
+@use 'base';
+
+* {
+   @extend %taphighlight;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-weight: bold;
+}
+
+h1 {
+   @include m.adaptiveValue('font-size', 40px, 19px);
+}
+
+h2 {
+   @include m.adaptiveValue('font-size', 24px, 17px);
+}
+
+h3 {
+   @include m.adaptiveValue('font-size', 20px, 12px);
+}
+
+h4 {
+   @include m.adaptiveValue('font-size', 18px, 12px);
+}
+
+::selection {
+   color: v.$grey;
+   background-color: v.$aquaTurquoise;
+}

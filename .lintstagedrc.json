@@ -1,0 +1,4 @@
+{
+   "./src/**/*": "npm run prettier:fix",
+   "./src/**/*.{tsx,jsx,ts}": "npm run lint:fix"
+}

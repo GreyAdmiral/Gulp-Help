@@ -1,0 +1,50 @@
+.user-scripts {
+   &-info {
+      @extend %text;
+      @include m.flex(null, null, column);
+      row-gap: f.rem(15px);
+      padding-bottom: f.rem(10px);
+
+      &-item {
+         display: flex;
+         flex-direction: row-reverse;
+         row-gap: f.rem(10px);
+         column-gap: f.rem(10px);
+         @include m.item-direction-adaptive;
+
+         &:nth-child(odd) {
+            flex-direction: row;
+            @include m.item-direction-adaptive;
+         }
+
+         &-image {
+            @include m.responsiveImage;
+
+            img {
+               object-position: center;
+               object-fit: contain;
+            }
+         }
+      }
+
+      &-struct {
+         &:nth-of-type(odd) {
+            .user-scripts-info-item-image {
+               padding: 0 0 27.7% 23%;
+            }
+         }
+
+         &:nth-of-type(even) {
+            .user-scripts-info-item-image {
+               padding: 0 0 15% 40%;
+            }
+         }
+
+         .user-scripts-info-item-image {
+            @media all and (max-width: 1140.5px) {
+               display: none;
+            }
+         }
+      }
+   }
+}

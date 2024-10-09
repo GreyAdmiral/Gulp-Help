@@ -1,0 +1,133 @@
+.stylization {
+   &-bonus {
+      @extend %text;
+      @include m.flex(null, null, column);
+      row-gap: f.rem(15px);
+      padding-bottom: f.rem(10px);
+
+      &-body {
+         @include m.flex(null, null, column);
+         row-gap: f.rem(10px);
+
+         &:nth-of-type(even) {
+            .stylization-bonus-item {
+               flex-direction: row-reverse;
+               @include m.item-direction-adaptive;
+            }
+         }
+      }
+
+      &-info {
+         display: block;
+
+         @media all and (max-width: 1140.5px) {
+            text-align: justify;
+         }
+
+         &:nth-last-child(1) {
+            @include m.oversmallmobile {
+               padding: f.rem(5px) 0 f.rem(10px);
+            }
+         }
+      }
+
+      &-item {
+         display: flex;
+         row-gap: f.rem(10px);
+         column-gap: f.rem(10px);
+         @include m.item-direction-adaptive;
+
+         &:nth-child(odd) {
+            flex-direction: row-reverse;
+            @include m.item-direction-adaptive;
+         }
+
+         &-image {
+            @include m.responsiveImage;
+
+            img {
+               object-position: center;
+               object-fit: contain;
+            }
+         }
+
+         &-menu {
+            .marking-bonus-item-image {
+               padding: 0 0 18.25% 48%;
+
+               @media all and (max-width: 1140.5px) {
+                  padding: 0 0 38% 100%;
+               }
+            }
+
+            &:last-child {
+               .marking-bonus-item-image {
+                  padding: 0 0 22% 48%;
+
+                  @media all and (max-width: 1140.5px) {
+                     padding: 0 0 46% 100%;
+                  }
+               }
+            }
+         }
+
+         &-vars,
+         &-zeroing,
+         &-gift {
+            .stylization-bonus-item-image {
+               padding: 0 0 12.65% 40%;
+
+               @media all and (max-width: 1140.5px) {
+                  padding: 0 0 31.4% 100%;
+               }
+            }
+         }
+
+         &-burger-menu {
+            display: block;
+         }
+
+         &-vars.stylization-bonus-item {
+            &:nth-child(odd) {
+               flex-direction: row;
+            }
+
+            &:nth-child(3) {
+               .stylization-bonus-item-image {
+                  padding: 0 0 12.4% 20%;
+
+                  @media all and (max-width: 1140.5px) {
+                     display: none;
+                  }
+               }
+            }
+         }
+
+         &-zeroing.stylization-bonus-item {
+            flex-direction: row-reverse;
+
+            .stylization-bonus-item-image {
+               padding: 0 0 12% 32%;
+
+               @media all and (max-width: 1140.5px) {
+                  display: none;
+               }
+            }
+         }
+
+         & code {
+            word-break: break-all;
+         }
+      }
+   }
+
+   h3 {
+      @include m.smallmobile {
+         text-align: center;
+      }
+   }
+
+   &-link {
+      @extend %colorLink;
+   }
+}

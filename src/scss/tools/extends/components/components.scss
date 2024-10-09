@@ -1,0 +1,67 @@
+@use '../../mixins' as m;
+@use '../../functions' as f;
+@use '../../vars' as v;
+
+%layout {
+   display: grid;
+   grid-auto-flow: column;
+   grid-template-rows: minmax(100px, auto) 1fr minmax(25px, auto);
+}
+
+%containerBodyPadding {
+   @include m.oversmalltablet {
+      padding: 0 f.rem(15px);
+   }
+}
+
+%colorLink {
+   color: v.$blueDark;
+   font-weight: 400;
+}
+
+%text {
+   line-height: 1.5;
+
+   @include m.oversmallmobile {
+      padding: f.rem(10px);
+   }
+
+   @include m.mobile {
+      text-align: justify;
+   }
+}
+
+%list {
+   @include m.flex(null, null, column);
+   row-gap: 10px;
+   font-style: italic;
+   list-style-position: outside;
+   text-align: start;
+}
+
+%listItem {
+   width: fit-content;
+
+   &::before {
+      display: inline-block;
+      width: fit-content;
+      height: 100%;
+      margin-right: f.rem(10px);
+      font-style: normal;
+   }
+}
+
+%listSection {
+   @include m.flex(null, null, column);
+   row-gap: 15px;
+   padding: f.rem(10px) 0;
+
+   @include m.oversmallmobile {
+      padding: f.rem(10px);
+   }
+
+   b {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+   }
+}

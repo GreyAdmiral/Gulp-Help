@@ -1,0 +1,6 @@
+@mixin item-direction-adaptive {
+   @media all and (max-width: 1140.5px) {
+      flex-direction: column;
+      text-align: justify;
+   }
+}

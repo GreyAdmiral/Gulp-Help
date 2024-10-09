@@ -1,0 +1,19 @@
+.home-info {
+   @extend %text;
+   @include m.flex(null, null, column);
+   row-gap: 15px;
+   padding-bottom: f.rem(10px);
+
+   &-quote {
+      padding: f.rem(10px) 0 f.rem(10px) f.rem(20px);
+      border-left: 2px solid v.$blueDark;
+
+      &-text {
+         font-style: italic;
+      }
+   }
+
+   &-link {
+      @extend %colorLink;
+   }
+}

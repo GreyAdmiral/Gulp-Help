@@ -1,0 +1,27 @@
+.home-description {
+   &-text {
+      @extend %text;
+   }
+
+   &-link {
+      @extend %colorLink;
+   }
+
+   &-logo {
+      @include m.flex(center);
+      width: 100%;
+      text-align: center;
+      color: v.$blueDark;
+      background-color: v.$lightTurquoise;
+      padding: 2% f.rem(25px);
+      overflow: hidden;
+      margin: f.rem(20px) 0;
+
+      svg {
+         display: inline-block;
+         max-width: 100%;
+         height: auto;
+         object-fit: cover;
+      }
+   }
+}

@@ -1,0 +1,24 @@
+.installation {
+   @extend %listSection;
+   @extend %text;
+
+   &-list {
+      @extend %list;
+
+      &-item {
+         @extend %listItem;
+
+         &::before {
+            content: '❖';
+         }
+      }
+   }
+
+   &-link {
+      @extend %colorLink;
+   }
+
+   code {
+      font-style: normal;
+   }
+}

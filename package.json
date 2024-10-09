@@ -1,6 +1,7 @@
 {
    "name": "gulp-help",
    "private": true,
+   "homepage": "https://greyadmiral.github.io/Gulp-Help/",
    "version": "1.0.0",
    "type": "module",
    "scripts": {
@@ -38,6 +39,7 @@
       "eslint-plugin-react": "^7.34.3",
       "eslint-plugin-react-hooks": "^4.6.2",
       "eslint-plugin-react-refresh": "^0.4.7",
+      "gh-pages": "^6.1.1",
       "husky": "^9.0.11",
       "lint-staged": "^15.2.7",
       "prettier": "^3.3.2",
@@ -49,6 +51,5 @@
       "vite-plugin-imagemin": "^0.6.1",
       "vite-plugin-webfont-dl": "^3.9.4",
       "vite-tsconfig-paths": "^4.3.2"
-   },
-   "homepage": "https://greyadmiral.github.io/Gulp-Help/"
+   }
 }

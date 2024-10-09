@@ -98,4 +98,5 @@ export const prodConfig = {
          },
       },
    },
+   base: '',
 };

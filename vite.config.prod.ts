@@ -62,7 +62,7 @@ export const prodConfig = {
          source: paths.src.favIcon,
          output: paths.public.assets,
          generatorOptions: {
-            path: './assets',
+            path: './',
             appName: 'Gulp Helper',
             appDescription: 'Gulp Helper',
             developerName: 'Binarion',
